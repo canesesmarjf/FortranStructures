@@ -25,9 +25,7 @@ PROGRAM readInputData
   close(unit=4)
 
   ! Calculations:
-  out%sum_int  = in%a + in%b + in%c
-  out%sum_real = in%x + in%y + in%z
-  out%flag_AND = in%flag_1 .AND. in%flag_2 .AND. in%flag_3
+  CALL function_1(in,out)
 
   ! Write output data:
   fileName = "data.out"
