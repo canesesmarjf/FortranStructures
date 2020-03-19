@@ -4,6 +4,8 @@ PROGRAM readInputData
   ! and output of data from a program
   ! In the module, we define a user-defined variable called dataTYP whose fields
   ! hold the values of the data stored in the input file called data.in
+  ! In the main program, we instantiate two structures: in and out. "in" is used
+  ! contain ALL the data that is inside the input file "data.in"
 
   ! Modules to use:
   USE dataTYP
@@ -25,9 +27,9 @@ PROGRAM readInputData
   close(unit=4)
 
   ! Calculations:
-  out%sum_int  = in%a + in%b + in%c
-  out%sum_real = in%x + in%y + in%z
-  out%flag_AND = in%flag_1 .AND. in%flag_2 .AND. in%flag_3
+  ! "in" contains the input data
+  ! "out" contains the output data produced by the function
+  CALL function_1(in,out)
 
   ! Write output data:
   fileName = "data.out"
